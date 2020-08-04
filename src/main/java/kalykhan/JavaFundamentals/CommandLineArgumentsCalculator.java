@@ -1,6 +1,7 @@
 package kalykhan.JavaFundamentals;
 
-public class CalculateCommandLineArgumentsProgram {
+public class CommandLineArgumentsCalculator {
+
     public int sumArg(String[] args){
         int sum = 0;
         try{
