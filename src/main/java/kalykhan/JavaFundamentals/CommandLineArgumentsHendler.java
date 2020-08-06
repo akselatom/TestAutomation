@@ -1,6 +1,14 @@
 package kalykhan.JavaFundamentals;
 
-public class CommandLineArgumentsCalculator {
+public class CommandLineArgumentsHendler {
+
+    public static void reverseArgMethod(String[] original) {
+        for (int i = 0; i < original.length / 2; i++) {
+            String temp = original[i];
+            original[i] = original[original.length - 1 - i];
+            original[original.length - 1 - i] = temp;
+        }
+    }
 
     public int sumArg(String[] args){
         int sum = 0;
