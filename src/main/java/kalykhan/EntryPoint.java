@@ -30,23 +30,24 @@ public class EntryPoint
                 + NumToMonthProvider.numberToMonth(7) + " "
                 + NumToMonthProvider.numberToMonth(11));
 
-        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        ArrayList<Integer> arrayList = new ArrayList<>();
         System.out.println("Input numbers in console, when done type 'end': ");
-        
-        boolean endCycle = false;
-        while(!endCycle){
-            String input = console.consoleInput();
-            if(input.equalsIgnoreCase("end")){
-                endCycle = true;
-                break;
-            }
-            try{
+
+        while(true){
+            try {
+                String input = console.consoleInput();
+                if(input.equalsIgnoreCase("end")){
+                    break;
+                }
                 Integer addNum = Integer.parseInt(input);
                 arrayList.add(addNum);
             }catch (NumberFormatException exception){
                 System.out.println("Can't parse this number");
+            }catch (NullPointerException exception){
+                break;
             }
         }
+
         System.out.println(arrayList.toString());
         NumberHandler numberHandler = new NumberHandler();
         System.out.println(numberHandler.findMinLength(arrayList).toString());
@@ -55,6 +56,5 @@ public class EntryPoint
         System.out.println(arrayList.toString());
         System.out.println(numberHandler.getNumLongerThanAvgLength(arrayList));
         System.out.println(numberHandler.findUniqueNum(arrayList));
-
     }
 }

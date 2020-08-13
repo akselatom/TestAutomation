@@ -24,7 +24,7 @@ public class ConsoleUI {
     }
 
     /**
-     * Ask user name using {@link #consoleInput()} method
+     * Ask user name using {@link #consoleInput()} method.
      * Then show welcome message.
      */
     public final void helloUser() {

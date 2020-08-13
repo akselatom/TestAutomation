@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class NumberHandler {
 
-    private ArrayList<Integer> numSizeList = new ArrayList<Integer>();
+    private final ArrayList<Integer> numSizeList = new ArrayList<>();
 
     public void sortArrayByNumLength(final ArrayList<Integer> numList,
                                      final boolean naturalOrder) {
@@ -85,7 +85,7 @@ public class NumberHandler {
         for (int num : this.numSizeList) {
             avgLength += num;
         }
-        ArrayList<Integer> longerThanAvg = new ArrayList<Integer>();
+        ArrayList<Integer> longerThanAvg = new ArrayList<>();
         avgLength = avgLength / this.numSizeList.size();
         for (int i = 0; i < this.numSizeList.size(); i++) {
             if (this.numSizeList.get(i) > avgLength) {
@@ -123,8 +123,8 @@ public class NumberHandler {
 
     private void getLengthNum(final ArrayList<Integer> array) {
         this.numSizeList.clear();
-        for (int i = 0; i < array.size(); i++) {
-            this.numSizeList.add(getLengthNum(array.get(i)));
+        for (Integer integer : array) {
+            this.numSizeList.add(getLengthNum(integer));
         }
     }
 }

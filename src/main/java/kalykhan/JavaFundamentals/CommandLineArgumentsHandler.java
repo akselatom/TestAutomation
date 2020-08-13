@@ -2,14 +2,22 @@ package kalykhan.JavaFundamentals;
 
 public class CommandLineArgumentsHandler {
 
-    public void reverseArgMethod(String[] original) {
-        for (int i = 0; i < original.length / 2; i++) {
-            String temp = original[i];
-            original[i] = original[original.length - 1 - i];
-            original[original.length - 1 - i] = temp;
+    /**
+     * Reverse string array.
+     * @param args Input array
+     */
+    public void reverseArgMethod(String[] args) {
+        for (int i = 0; i < args.length / 2; i++) {
+            String temp = args[i];
+            args[i] = args[args.length - 1 - i];
+            args[args.length - 1 - i] = temp;
         }
     }
 
+    /**
+     * @param args array for summing.
+     * @return Returns sum of command line arguments. If failed returns -1.
+     */
     public int sumArg(String[] args){
         int sum = 0;
         try{

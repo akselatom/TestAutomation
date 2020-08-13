@@ -20,11 +20,12 @@ public abstract class NumToMonthProvider {
         October,
         November,
         December
-    };
+    }
 
     /**
      * @param number The ordinal of the month.
      * @return Returns the name of the month.
+     * Returns null if number not included in the interval [1,12].
      */
     public static String numberToMonth(final int number) {
         String result = null;
