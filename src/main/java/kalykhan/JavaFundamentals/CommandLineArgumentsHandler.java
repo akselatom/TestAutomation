@@ -1,8 +1,8 @@
 package kalykhan.JavaFundamentals;
 
-public class CommandLineArgumentsHendler {
+public class CommandLineArgumentsHandler {
 
-    public static void reverseArgMethod(String[] original) {
+    public void reverseArgMethod(String[] original) {
         for (int i = 0; i < original.length / 2; i++) {
             String temp = original[i];
             original[i] = original[original.length - 1 - i];
