@@ -1,11 +1,30 @@
 package kalykhan.JavaFundamentals.OptionalTask1;
 
+import kalykhan.JavaFundamentals.ConsoleUI;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class NumberHandler {
 
     private final ArrayList<Integer> numSizeList = new ArrayList<>();
+    private final ConsoleUI console = new ConsoleUI();
+
+    public ArrayList<Integer> fillArrayList() {
+        System.out.println("Input numbers in console, when done type 'end': ");
+        ArrayList<Integer> inputInt = new ArrayList<>();
+        while(true) {
+            String input = console.consoleInput();
+            if(input.equals("end")) {
+                return inputInt;
+            }
+            if(ConsoleUI.performIntParse(input) != -1) {
+                inputInt.add(ConsoleUI.performIntParse(input));
+            } else {
+                System.out.println("Can't parse input to int.");
+            }
+        }
+    }
 
     public void sortArrayByNumLength(final ArrayList<Integer> numList,
                                      final boolean naturalOrder) {
