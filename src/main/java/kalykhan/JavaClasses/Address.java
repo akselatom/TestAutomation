@@ -1,6 +1,7 @@
 package kalykhan.JavaClasses;
 
 public class Address {
+
     private String country;
     private String city;
     private String street;
@@ -29,6 +30,10 @@ public class Address {
                 country, city, street, houseNumber);
     }
 
+    /**
+     ** @return Returns an array of strings containing
+     * all Address class fields.
+     */
     public String[] getAddress() {
         return new String[]{this.country, this.city, this.street, this.houseNumber};
     }

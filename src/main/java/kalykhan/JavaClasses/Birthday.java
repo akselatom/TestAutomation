@@ -1,9 +1,9 @@
 package kalykhan.JavaClasses;
 
-public class Birthday{
-    Integer day;
-    Integer month;
-    Integer year;
+public class Birthday {
+    private Integer day;
+    private Integer month;
+    private Integer year;
 
     Birthday(Integer day, Integer month, Integer year) {
         this.day = day;
@@ -12,9 +12,9 @@ public class Birthday{
     }
 
     public boolean compareTo(Birthday date) {
-        return this.day == date.day
-                && this.month == date.month
-                && this.year == date.year;
+        return this.day.equals(date.day)
+                && this.month.equals(date.month)
+                && this.year.equals(date.year);
     }
 
     public Integer getDay() {

@@ -2,22 +2,21 @@ package kalykhan.JavaClasses;
 
 public class Student extends Person {
     Birthday date;
-    String faculty;
+    Faculty faculty;
     Integer course;
     Integer group;
 
     public Student() {
         super();
-        this.date = new Birthday(1,1,1960);
-        this.faculty = "Rfe";
+        this.date = new Birthday(1, 1, 1960);
+        this.faculty = new Faculty();
         this.course = 4;
         this.group = 1;
     }
 
-    public Student(String firstName, String secondName, String patronymicName,
-                   Address address, String phoneNumber,
-                   String faculty, Integer course, Integer group,Birthday date) {
-        super(firstName, secondName, patronymicName, address, phoneNumber);
+    public Student(FullName fullName, Address address, String phoneNumber,
+                   Faculty faculty, Integer course, Integer group, Birthday date) {
+        super(fullName, address, phoneNumber);
         this.faculty = faculty;
         this.course = course;
         this.group = group;
@@ -26,8 +25,8 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return String.format("%s, faculty='%s', course='%d', group='%d'",
-                super.toString(),faculty, course,group);
+        return String.format("%s, %s, course='%d', group='%d'",
+                super.toString(), faculty.toString(), course, group);
     }
 
     public static Student[] createObjectArray() {
@@ -35,9 +34,9 @@ public class Student extends Person {
     }
 
     public static Student[] createObjectArray(int size) {
-        if(size > 0) {
+        if (size > 0) {
             Student[] students = new Student[size];
-            for(int i = 0 ; i < students.length ; i++) {
+            for (int i = 0; i < students.length; i++) {
                 students[i] = new Student();
             }
             return students;
@@ -46,11 +45,11 @@ public class Student extends Person {
         }
     }
 
-    public String getFaculty() {
+    public Faculty getFaculty() {
         return faculty;
     }
 
-    public void setFaculty(String faculty) {
+    public void setFaculty(Faculty faculty) {
         this.faculty = faculty;
     }
 

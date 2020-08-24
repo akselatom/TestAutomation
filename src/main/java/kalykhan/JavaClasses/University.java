@@ -1,41 +1,29 @@
 package kalykhan.JavaClasses;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class University {
-    private Student[] students;
+    private ArrayList<Student> students;
 
-    University(){
-        students = Student.createArray();
+    public University() {
+        students = new ArrayList<>(
+                Arrays.asList(Student.createObjectArray()));
     }
 
-    public Student[] createStudentArrayFromSameFaculty(String facultyName) {
-        ArrayList<Student> studentsList = new ArrayList<>();
-        for(Student student : this.students) {
-            if (facultyName == student.faculty) {
-                studentsList.add(student);
-            }
-        }
-        return studentsList.toArray(new Student[0]);
+    public ArrayList<Student> createStudentListAccordingCondition(Predicate<Student> condition) {
+        return (ArrayList<Student>) students.stream()
+                .filter(condition)
+                .collect(Collectors.toList());
     }
 
-    public Student[] createStudentArrayThatBurnAfterCertainYear(Integer year) {
-        ArrayList<Student> studentsList = new ArrayList<>();
-        for(Student student : this.students) {
-            if (year == student.date.year) {
-                studentsList.add(student);
-            }
-        }
-        return studentsList.toArray(new Student[0]);
+    public ArrayList<Student> getStudents() {
+        return students;
     }
 
-    public Student[] createGroupList(Integer group, Integer course) {
-        ArrayList<Student> studentsList = new ArrayList<>();
-        for(Student student : this.students) {
-            if (group == student.group && course == student.course) {
-                studentsList.add(student);
-            }
-        }
-        return studentsList.toArray(new Student[0]);
+    public void setStudents(ArrayList<Student> students) {
+        this.students = students;
     }
 }
