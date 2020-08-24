@@ -1,14 +1,17 @@
 package kalykhan.JavaClasses;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
 public class FullName {
     private String firstName;
     private String secondName;
     private String patronymicName;
-
     public FullName() {
-        this.firstName = "Default";
-        this.secondName = "Default";
-        this.patronymicName = "Default";
+        generateRandomName();
     }
 
     public FullName(String firstName, String secondName, String patronymicName) {
@@ -51,5 +54,14 @@ public class FullName {
 
     public void setPatronymicName(String patronymicName) {
         this.patronymicName = patronymicName;
+    }
+
+    private void generateRandomName() {
+        String[] names = new String[]{"John", "Nick", "Sergey", "Ivan"};
+        String[] secondNames = new String[]{"Kalykhan","Connor","Ivanovich","Astley"};
+        Random random = new Random();
+        this.firstName = names[random.nextInt(names.length)];
+        this.secondName = secondNames[random.nextInt(secondNames.length)];
+        this.patronymicName = "None";
     }
 }

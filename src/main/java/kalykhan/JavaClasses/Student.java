@@ -25,8 +25,8 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return String.format("%s, %s, course='%d', group='%d'",
-                super.toString(), faculty.toString(), course, group);
+        return String.format("%s, %s, course='%d', group='%d', birthday = '%s'",
+                super.toString(), faculty.toString(), course, group, date.toString());
     }
 
     public static Student[] createObjectArray() {
