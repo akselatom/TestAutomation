@@ -3,30 +3,27 @@ package kalykhan.JavaClasses;
 public class Student extends Person {
     Birthday date;
     Faculty faculty;
-    Integer course;
-    Integer group;
+    StudyGroup studyGroup;
 
     public Student() {
         super();
         this.date = new Birthday(1, 1, 1960);
-        this.faculty = new Faculty();
-        this.course = 4;
-        this.group = 1;
+        studyGroup = new StudyGroup();
     }
 
     public Student(FullName fullName, Address address, String phoneNumber,
-                   Faculty faculty, Integer course, Integer group, Birthday date) {
+                   Faculty faculty, StudyGroup group, Birthday date) {
         super(fullName, address, phoneNumber);
         this.faculty = faculty;
-        this.course = course;
-        this.group = group;
+        this.studyGroup = group;
         this.date = date;
     }
 
     @Override
     public String toString() {
-        return String.format("%s, %s, course='%d', group='%d', birthday = '%s'",
-                super.toString(), faculty.toString(), course, group, date.toString());
+        return String.format("%s, %s, %s, birthday = '%s'",
+                super.toString(), faculty.getFacultyName(),
+                studyGroup.toString(), date.toString());
     }
 
     public static Student[] createObjectArray() {
@@ -61,19 +58,11 @@ public class Student extends Person {
         this.date = date;
     }
 
-    public Integer getCourse() {
-        return course;
+    public StudyGroup getStudyGroup() {
+        return studyGroup;
     }
 
-    public void setCourse(Integer course) {
-        this.course = course;
-    }
-
-    public Integer getGroup() {
-        return group;
-    }
-
-    public void setGroup(Integer group) {
-        this.group = group;
+    public void setStudyGroup(StudyGroup studyGroup) {
+        this.studyGroup = studyGroup;
     }
 }

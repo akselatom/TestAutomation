@@ -1,15 +1,12 @@
 package kalykhan.JavaClasses;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 public class FullName {
     private String firstName;
     private String secondName;
     private String patronymicName;
+
     public FullName() {
         generateRandomName();
     }
@@ -24,12 +21,6 @@ public class FullName {
     public String toString() {
         return String.format("firstName='%s', secondName='%s', patronymicName='%s'",
                 this.firstName, this.secondName, this.patronymicName);
-    }
-
-    public Boolean compareTo(FullName fullName) {
-        return fullName.patronymicName.equals(this.patronymicName)
-                && fullName.secondName.equals(this.secondName)
-                && fullName.firstName.equals(this.firstName);
     }
 
     public String getFirstName() {

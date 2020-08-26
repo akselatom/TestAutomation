@@ -2,6 +2,7 @@ package kalykhan;
 
 import kalykhan.JavaClasses.Faculty;
 import kalykhan.JavaClasses.Student;
+import kalykhan.JavaClasses.StudyGroup;
 import kalykhan.JavaClasses.University;
 
 public class TaskPerformer {
@@ -17,6 +18,28 @@ public class TaskPerformer {
         System.out.println(line);
 
         System.out.println("Task 1b : Show lists of students for each faculty and courses;");
+        for(Faculty faculty : bsu.getFaculties()) {
+            for(int i = 1 ; i < faculty.getTrainingDuration() ; i++) {
+                int finalI = i;
+                System.out.println(faculty.createStudentListAccordingCondition
+                        (student -> student.getStudyGroup().getCourse().equals(finalI)));
+            }
+        }
+        System.out.println(line);
 
+        System.out.println("Task 1c : Show lists of students born after a given year;");
+        for (Student student : bsu.createStudentListAccordingCondition(t->
+                t.getDate().getYear() > 1970)) {
+            System.out.println(student.toString());
+        }
+        System.out.println(line);
+
+        System.out.println("Task 1d : Show lists of study group.");
+        for(Faculty faculty : bsu.getFaculties()) {
+            System.out.print(faculty.getFacultyName() + ": ");
+            System.out.println(faculty.createStudentListAccordingCondition
+                    (student -> student.getStudyGroup().equals(new StudyGroup(3,2))));
+        }
+        System.out.println(line);
     }
 }

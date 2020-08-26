@@ -1,12 +1,19 @@
 package kalykhan.JavaClasses;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
+/**
+ * Class containing information about the faculty name
+ * and information about students at the faculty.
+ */
 public class Faculty {
-    String facultyName;
-
-    ArrayList<Student> studentsList;
+    private String facultyName;
+    private ArrayList<Student> studentsList;
+    private Integer trainingDuration = 5;
 
     Faculty() {
         this.facultyName = "Rfe";
@@ -20,9 +27,19 @@ public class Faculty {
         fillStudentsList();
     }
 
+    /**
+     * @return Returns faculty name and number of students.
+     */
     @Override
     public String toString() {
-        return String.format("faculty name: '%s' ",this.facultyName);
+        return String.format("faculty name: '%s', number of students: '%d'",
+                this.facultyName, this.studentsList.size());
+    }
+
+    public ArrayList<Student> createStudentListAccordingCondition(Predicate<Student> condition) {
+        return (ArrayList<Student>) studentsList.stream()
+                .filter(condition)
+                .collect(Collectors.toList());
     }
 
     public ArrayList<Student> getStudentsList() {
@@ -41,13 +58,22 @@ public class Faculty {
         this.facultyName = facultyName;
     }
 
+    public Integer getTrainingDuration() {
+        return trainingDuration;
+    }
+
+    /**
+     * Fill studentsList with unique Student objects.
+     */
     private void fillStudentsList() {
         Random random = new Random();
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < 5; i++) {
             studentsList.add(new Student(
                     new FullName(), new Address(), "",
-                    this,random.nextInt(4) + 1,
-                    random.nextInt(4) + 1,new Birthday()));
+                    this,
+                    new StudyGroup(random.nextInt(trainingDuration) + 1,
+                            random.nextInt(4) + 1)
+                    ,new Birthday()));
         }
     }
 }

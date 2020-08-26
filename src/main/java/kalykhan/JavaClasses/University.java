@@ -6,21 +6,20 @@ import java.util.stream.Collectors;
 
 public class University {
     private ArrayList<Faculty> faculties;
-    private ArrayList<Student> studentsList;
 
     public University() {
         faculties = new ArrayList<>();
-        studentsList = new ArrayList<>();
         fillFacultiesList();
-        for(Faculty faculty : faculties) {
-            studentsList.addAll(faculty.studentsList);
-        }
     }
 
     public ArrayList<Student> createStudentListAccordingCondition(Predicate<Student> condition) {
-        return (ArrayList<Student>) studentsList.stream()
-                .filter(condition)
-                .collect(Collectors.toList());
+        ArrayList<Student> students = new ArrayList<>();
+        for(Faculty faculty : faculties) {
+            students.addAll(faculty.getStudentsList().stream()
+                    .filter(condition)
+                    .collect(Collectors.toList()));
+        }
+        return students;
     }
 
     public ArrayList<Faculty> getFaculties() {
@@ -29,14 +28,6 @@ public class University {
 
     public void setFaculties(ArrayList<Faculty> faculties) {
         this.faculties = faculties;
-    }
-
-    public ArrayList<Student> getStudentsList() {
-        return studentsList;
-    }
-
-    public void setStudentsList(ArrayList<Student> studentsList) {
-        this.studentsList = studentsList;
     }
 
     private void fillFacultiesList() {

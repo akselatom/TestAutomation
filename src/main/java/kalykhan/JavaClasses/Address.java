@@ -1,5 +1,8 @@
 package kalykhan.JavaClasses;
 
+/**
+ * Class containing information about full address.
+ */
 public class Address {
     private String country;
     private String city;
