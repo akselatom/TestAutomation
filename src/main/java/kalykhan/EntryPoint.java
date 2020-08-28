@@ -1,5 +1,6 @@
 package kalykhan;
 
+import kalykhan.javaCollections.UI;
 import kalykhan.javaCollections.autoDatabase.XmlToAutoDatabaseParser;
 
 /**
@@ -10,6 +11,7 @@ public class EntryPoint
 {
     public static void main( String[] args )
     {
-        System.out.println( XmlToAutoDatabaseParser.parseXmlToObject("vehicle.xml").getVehicleList());
+        UI ui = new UI();
+        ui.provideUserInterface();
     }
 }
