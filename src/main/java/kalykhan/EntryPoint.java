@@ -1,13 +1,10 @@
 package kalykhan;
 
-/**
- * Hello world!
- *
- */
-public class EntryPoint
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class EntryPoint {
+    public static void main( String[] args ) {
+        TaskPerformer performer = new TaskPerformer();
+        performer.performJavaFundamentalsTasks();
+        performer.performOptionalTask1FromJavaFundamentals();
+
     }
 }
