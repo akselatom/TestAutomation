@@ -5,6 +5,6 @@ public class EntryPoint {
         TaskPerformer performer = new TaskPerformer();
         performer.performJavaFundamentalsTasks();
         performer.performOptionalTask1FromJavaFundamentals();
-
+        performer.performJavaClassesTask();
     }
 }

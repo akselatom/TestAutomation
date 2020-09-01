@@ -1,5 +1,9 @@
 package kalykhan;
 
+import kalykhan.javaClasses.education.Faculty;
+import kalykhan.javaClasses.persons.Student;
+import kalykhan.javaClasses.education.StudyGroup;
+import kalykhan.javaClasses.education.University;
 import kalykhan.JavaFundamentals.CommandLineArgumentsHandler;
 import kalykhan.JavaFundamentals.NumToMonthProvider;
 import kalykhan.JavaFundamentals.ConsoleUI;
@@ -8,10 +12,46 @@ import kalykhan.JavaFundamentals.OptionalTask1.NumberHandler;
 import java.util.ArrayList;
 
 public class TaskPerformer {
+    private University bsu = new University();
     private ConsoleUI ui = new ConsoleUI();
     private NumberHandler numberHandler = new NumberHandler();
+  
+    void performJavaClassesTask() {
+        String line = "_____________";
+        System.out.println("Task 1a : Show list of students of a given faculty.");
+        for (Student student : bsu.createStudentListAccordingCondition(t->
+                t.getFaculty().getFacultyName().equals("Rfe"))) {
+            System.out.println(student.toString());
+        }
+        System.out.println(line);
 
-    public void performJavaFundamentalsTasks() {
+        System.out.println("Task 1b : Show lists of students for each faculty and courses;");
+        for(Faculty faculty : bsu.getFaculties()) {
+            for(int i = 1 ; i < faculty.getTrainingDuration() ; i++) {
+                int finalI = i;
+                System.out.println(faculty.createStudentListAccordingCondition
+                        (student -> student.getStudyGroup().getCourse().equals(finalI)));
+            }
+        }
+        System.out.println(line);
+
+        System.out.println("Task 1c : Show lists of students born after a given year;");
+        for (Student student : bsu.createStudentListAccordingCondition(t->
+                t.getDate().getYear() > 1970)) {
+            System.out.println(student.toString());
+        }
+        System.out.println(line);
+
+        System.out.println("Task 1d : Show lists of study group.");
+        for(Faculty faculty : bsu.getFaculties()) {
+            System.out.print(faculty.getFacultyName() + ": ");
+            System.out.println(faculty.createStudentListAccordingCondition
+                    (student -> student.getStudyGroup().equals(new StudyGroup(3,2))));
+        }
+        System.out.println(line);
+    }
+  
+  public void performJavaFundamentalsTasks() {
         String line = "____________________";
         System.out.println("Task 1: Meet any person in console");
         ui.helloUser();
@@ -28,8 +68,8 @@ public class TaskPerformer {
 
         System.out.println("Task 3: Print a given number of random numbers with and without a new line");
         String input = ui.consoleInput();
-        if(ui.performIntParse(input) != -1) {
-            ui.showRandNum(ui.performIntParse(input));
+        if(ConsoleUI.performIntParse(input) != -1) {
+            ui.showRandNum(ConsoleUI.performIntParse(input));
         } else {
             System.out.println("Can't parse input to int. "
                     + "Set number of random numbers to 5");
