@@ -1,4 +1,4 @@
-package kalykhan.JavaClasses;
+package kalykhan.javaClasses.infoClasses;
 
 import java.util.Random;
 

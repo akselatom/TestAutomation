@@ -1,4 +1,4 @@
-package kalykhan.JavaClasses;
+package kalykhan.javaClasses.education;
 
 import java.util.Objects;
 
@@ -6,7 +6,7 @@ public class StudyGroup {
     private Integer course;
     private Integer group;
 
-    StudyGroup() {
+    public StudyGroup() {
         this.course = 1;
         this.group = 1;
     }

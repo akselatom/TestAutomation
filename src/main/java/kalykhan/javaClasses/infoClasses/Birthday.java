@@ -1,4 +1,4 @@
-package kalykhan.JavaClasses;
+package kalykhan.javaClasses.infoClasses;
 
 import java.util.Objects;
 import java.util.Random;
@@ -25,7 +25,7 @@ public class Birthday {
      * @param month the month
      * @param year  the year
      */
-    Birthday(Integer day, Integer month, Integer year) {
+    public Birthday(Integer day, Integer month, Integer year) {
         this.day = day;
         this.month = month;
         this.year = year;

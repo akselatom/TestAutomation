@@ -1,4 +1,6 @@
-package kalykhan.JavaClasses;
+package kalykhan.javaClasses.education;
+
+import kalykhan.javaClasses.persons.Student;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;

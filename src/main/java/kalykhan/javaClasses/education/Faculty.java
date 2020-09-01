@@ -1,7 +1,11 @@
-package kalykhan.JavaClasses;
+package kalykhan.javaClasses.education;
+
+import kalykhan.javaClasses.infoClasses.Address;
+import kalykhan.javaClasses.infoClasses.Birthday;
+import kalykhan.javaClasses.infoClasses.FullName;
+import kalykhan.javaClasses.persons.Student;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Random;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;

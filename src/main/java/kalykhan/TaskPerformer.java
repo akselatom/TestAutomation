@@ -1,9 +1,9 @@
 package kalykhan;
 
-import kalykhan.JavaClasses.Faculty;
-import kalykhan.JavaClasses.Student;
-import kalykhan.JavaClasses.StudyGroup;
-import kalykhan.JavaClasses.University;
+import kalykhan.javaClasses.education.Faculty;
+import kalykhan.javaClasses.persons.Student;
+import kalykhan.javaClasses.education.StudyGroup;
+import kalykhan.javaClasses.education.University;
 
 public class TaskPerformer {
     private University bsu = new University();

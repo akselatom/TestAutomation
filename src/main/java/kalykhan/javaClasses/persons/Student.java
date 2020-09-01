@@ -1,4 +1,10 @@
-package kalykhan.JavaClasses;
+package kalykhan.javaClasses.persons;
+
+import kalykhan.javaClasses.education.Faculty;
+import kalykhan.javaClasses.education.StudyGroup;
+import kalykhan.javaClasses.infoClasses.Address;
+import kalykhan.javaClasses.infoClasses.Birthday;
+import kalykhan.javaClasses.infoClasses.FullName;
 
 public class Student extends Person {
     Birthday date;

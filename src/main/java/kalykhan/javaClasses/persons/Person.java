@@ -1,4 +1,7 @@
-package kalykhan.JavaClasses;
+package kalykhan.javaClasses.persons;
+
+import kalykhan.javaClasses.infoClasses.Address;
+import kalykhan.javaClasses.infoClasses.FullName;
 
 public class Person {
     private Integer id;
