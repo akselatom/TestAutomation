@@ -10,6 +10,9 @@ public class NumberHandler {
     private final ArrayList<Integer> numSizeList = new ArrayList<>();
     private final ConsoleUI console = new ConsoleUI();
 
+    /**
+     * Fills the ArrayList by reading the console input.
+     */
     public ArrayList<Integer> fillArrayList() {
         System.out.println("Input numbers in console, when done type 'end': ");
         ArrayList<Integer> inputInt = new ArrayList<>();
@@ -45,7 +48,6 @@ public class NumberHandler {
                 }
             }
         } else {
-
             for (int i = 1; i < this.numSizeList.size(); i++) {
                 if (this.numSizeList.get(i) > this.numSizeList.get(i - 1)) {
                     Collections.swap(this.numSizeList, i, i - 1);
@@ -63,7 +65,7 @@ public class NumberHandler {
         }
     }
 
-    public ArrayList<Integer> findMinLength(final ArrayList<Integer> numList) {
+    public ArrayList<Integer> findMinLengthNumber(final ArrayList<Integer> numList) {
         getLengthNum(numList);
         int minLengthIndex = 0;
         int min = this.numSizeList.get(minLengthIndex);
@@ -81,7 +83,7 @@ public class NumberHandler {
         return shortestNum;
     }
 
-    public ArrayList<Integer> findMaxLength(final ArrayList<Integer> numList) {
+    public ArrayList<Integer> findMaxLengthNumber(final ArrayList<Integer> numList) {
         getLengthNum(numList);
         int maxLengthIndex = 0;
         int max = this.numSizeList.get(maxLengthIndex);
@@ -114,6 +116,9 @@ public class NumberHandler {
         return longerThanAvg;
     }
 
+    /**
+     * @return Returns a number with only unique digits
+     */
     public Integer findUniqueNum(final ArrayList<Integer> arrayList) {
         for (Integer num : arrayList) {
             String numString = num.toString();

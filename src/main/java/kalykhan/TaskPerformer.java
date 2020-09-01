@@ -12,19 +12,19 @@ public class TaskPerformer {
     private NumberHandler numberHandler = new NumberHandler();
 
     public void performJavaFundamentalsTasks() {
-        String line = "____________________";
+        String demarcationLine = "____________________";
         System.out.println("Task 1: Meet any person in console");
         ui.helloUser();
-        System.out.println(line);
+        System.out.println(demarcationLine);
 
         System.out.println("Task 2: Display command arguments in reverse order");
         System.out.println("Using a prepared string instead of command line arguments ");
         String[] preStrings = {"a", "b", "c", "d"};
-        ui.showArrayElements(preStrings);
+        ui.showArrayElementsInConsole(preStrings);
         CommandLineArgumentsHandler handler = new CommandLineArgumentsHandler();
         handler.reverseArgMethod(preStrings);
-        ui.showArrayElements(preStrings);
-        System.out.println(line);
+        ui.showArrayElementsInConsole(preStrings);
+        System.out.println(demarcationLine);
 
         System.out.println("Task 3: Print a given number of random numbers with and without a new line");
         String input = ui.consoleInput();
@@ -35,22 +35,22 @@ public class TaskPerformer {
                     + "Set number of random numbers to 5");
             ui.showRandNum(5);
         }
-        System.out.println(line);
+        System.out.println(demarcationLine);
 
         System.out.println("Task 4: Enter integers as command line arguments,"
                 + " \ncalculate their sum and print the result to the console. ");
         System.out.println("Using a prepared string instead of command line arguments ");
         preStrings = new String[]{"12", "21", "23", "42"};
-        ui.showArrayElements(preStrings);
+        ui.showArrayElementsInConsole(preStrings);
         System.out.println("Sum: " + handler.sumArg(preStrings));
-        System.out.println(line);
+        System.out.println(demarcationLine);
 
         System.out.println("Task 5: Enter a number from 1 to 12. "
                 + "\nOutput to the console the name of the month corresponding to the given date. "
                 + "\nCheck the correctness of entering numbers.");
         input = ui.consoleInput();
         System.out.println(NumToMonthProvider.numberToMonth(input));
-        System.out.println(line);
+        System.out.println(demarcationLine);
     }
 
     public void performOptionalTask1FromJavaFundamentals() {
@@ -59,8 +59,8 @@ public class TaskPerformer {
                 + " Print the found numbers and their length.");
         ArrayList<Integer> integers = numberHandler.fillArrayList();
         System.out.println(integers.toString());
-        System.out.println("Max length: " + numberHandler.findMaxLength(integers).toString()
-                + "Min length: " + numberHandler.findMinLength(integers).toString());
+        System.out.println("Max length: " + numberHandler.findMaxLengthNumber(integers).toString()
+                + "Min length: " + numberHandler.findMinLengthNumber(integers).toString());
         System.out.println(line);
 
         System.out.println("Optional Task 1.2: Print numbers in "

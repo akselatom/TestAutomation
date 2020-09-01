@@ -34,6 +34,9 @@ public class ConsoleUI {
         System.out.println("Hello " + consoleInput());
     }
 
+    /**
+     * Output to the console of the specified number of random numbers
+     */
     public void showRandNum(int amount) {
         ArrayList<Integer> randList = new ArrayList<>();
         Random random = new Random();
@@ -46,7 +49,7 @@ public class ConsoleUI {
         }
     }
 
-    public void showArrayElements(String[] strings) {
+    public void showArrayElementsInConsole(String[] strings) {
         for (String string : strings) {
             System.out.print(string + " ");
         }
