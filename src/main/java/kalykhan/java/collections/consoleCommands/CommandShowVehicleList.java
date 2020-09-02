@@ -1,7 +1,7 @@
-package kalykhan.javaCollections.consoleCommands;
+package kalykhan.java.collections.consoleCommands;
 
-import kalykhan.javaCollections.TaxiStation;
-import kalykhan.javaCollections.automobiles.Vehicle;
+import kalykhan.java.collections.TaxiStation;
+import kalykhan.java.collections.automobiles.Vehicle;
 
 public class CommandShowVehicleList extends ConsoleCommand {
     public CommandShowVehicleList() {
@@ -9,7 +9,7 @@ public class CommandShowVehicleList extends ConsoleCommand {
     }
 
     @Override
-    public void execute(TaxiStation taxiStation) {
+    public void executeCommand(TaxiStation taxiStation) {
         for(Vehicle vehicle : taxiStation.getVehiclesList()) {
             System.out.println(vehicle.toString());
         }

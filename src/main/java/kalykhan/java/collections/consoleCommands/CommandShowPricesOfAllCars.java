@@ -1,13 +1,13 @@
-package kalykhan.javaCollections.consoleCommands;
+package kalykhan.java.collections.consoleCommands;
 
-import kalykhan.javaCollections.TaxiStation;
+import kalykhan.java.collections.TaxiStation;
 
 public class CommandShowPricesOfAllCars extends ConsoleCommand {
     public CommandShowPricesOfAllCars() {
         this.commandName = "countPrice";
     }
     @Override
-    public void execute(TaxiStation taxiStation) {
+    public void executeCommand(TaxiStation taxiStation) {
         System.out.println("Total price: " + taxiStation.getThePriceOfAllVehicles());
     }
 }

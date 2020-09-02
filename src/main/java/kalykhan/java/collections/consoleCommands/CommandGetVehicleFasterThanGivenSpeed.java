@@ -1,6 +1,6 @@
-package kalykhan.javaCollections.consoleCommands;
+package kalykhan.java.collections.consoleCommands;
 
-import kalykhan.javaCollections.TaxiStation;
+import kalykhan.java.collections.TaxiStation;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class CommandGetVehicleFasterThanGivenSpeed extends ConsoleCommand {
     }
 
     @Override
-    public void execute(TaxiStation taxiStation) {
+    public void executeCommand(TaxiStation taxiStation) {
         try {
             Scanner in = new Scanner(System.in);
             String input = in.nextLine();

@@ -1,9 +1,7 @@
-package kalykhan.javaCollections.consoleCommands;
+package kalykhan.java.collections.consoleCommands;
 
-import kalykhan.javaCollections.TaxiStation;
+import kalykhan.java.collections.TaxiStation;
 
-import java.util.Collections;
-import java.util.Comparator;
 
 public class CommandSortAutoListByFuelConsumption extends ConsoleCommand {
 
@@ -12,7 +10,7 @@ public class CommandSortAutoListByFuelConsumption extends ConsoleCommand {
     }
 
     @Override
-    public void execute(TaxiStation taxiStation) {
+    public void executeCommand(TaxiStation taxiStation) {
         taxiStation.sortVehiclesListByFuelConsumption();
     }
 }
